@@ -195,7 +195,7 @@
                     <!-- Campo CPF -->
                     <div class="col-sm-12">
                         <label for="cpf" class="form-label">CPF</label>
-                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="" required>
+                        <input type="text" th:text="${cpf}" class="form-control" id="cpf" name="cpf" placeholder="">
                         <div class="invalid-feedback">
                             Valid CPF is required.
                         </div>
@@ -269,6 +269,21 @@
 
 <script src="/assets/dist/js/bootstrap.bundle.min.js"></script>
 <script src="/assets/dist/js/add-patient.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const submitButton = document.querySelector('button[type="submit"]');
+
+        submitButton.addEventListener('click', (event) => {
+            const patientCpf = document.getElementById('cpf').value;
+
+            if (patientCpf) {
+                sessionStorage.setItem('patientCpf', patientCpf);
+                console.log('CPF armazenado no sessionStorage:', patientCpf);
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
 

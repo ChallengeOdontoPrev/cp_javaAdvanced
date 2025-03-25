@@ -33,6 +33,14 @@
           }
         }
 
+        .logado-como {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-top: 1rem;
+          gap: 2px;
+        }
+
         .b-example-divider {
           width: 100%;
           height: 3rem;
@@ -176,13 +184,10 @@
         <img class="mb-4" src="/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
         <h1 class="h3 mb-3 fw-normal">Novo atendimento</h1>
 
-        <div class="form-floating">
-            <input type="text" class="form-control" id="cpf" name="cpf" placeholder="123.456.789-10">
-            <label for="cpf">CPF do paciente</label>
+        <div class="logado-como">
+            <p>Logado como:</p>
+            <p class="text-center" id="logged-cpf" th:text="${loggedAs}"> </p>
         </div>
-        <br/>
-        <!-- Exibe o CPF do usuário logado -->
-        <p class="text-center" id="logged-cpf" th:text="${loggedAs}"></p>
 
         <button class="btn btn-primary w-100 py-2" type="submit">Iniciar</button>
         <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2024</p>
@@ -195,11 +200,12 @@
         const loggedCpf = document.getElementById('logged-cpf').textContent;
 
         if (loggedCpf) {
-            localStorage.setItem('loggedCpf', loggedCpf);
-            console.log('CPF armazenado no localStorage:', loggedCpf);
+            sessionStorage.setItem('loggedCpf', loggedCpf);
+            console.log('CPF armazenado no sessionStorage:', loggedCpf);
         }
     });
 </script>
+
 
 
 </body>
