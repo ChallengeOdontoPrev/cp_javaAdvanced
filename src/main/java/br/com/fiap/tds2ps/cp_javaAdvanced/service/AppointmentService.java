@@ -10,6 +10,8 @@ import br.com.fiap.tds2ps.cp_javaAdvanced.repositories.PatientRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class AppointmentService {
 
@@ -34,6 +36,11 @@ public class AppointmentService {
         entity.setPatient(patient);
         entity = appointmentRepository.save(entity);
         return new AppointmentDTO(entity);
+    }
+
+    public List<AppointmentDTO> findAll(){
+        List<Appointment> appointments = appointmentRepository.findAll();
+        return appointments.stream().map(appointment -> new AppointmentDTO()).toList();
     }
 
 }
