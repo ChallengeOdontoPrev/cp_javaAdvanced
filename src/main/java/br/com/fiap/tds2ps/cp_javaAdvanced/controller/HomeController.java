@@ -17,10 +17,9 @@ public class HomeController {
         return new ModelAndView("index");
     }
 
-    @PostMapping("/sign-in")
-    public ModelAndView signIn(Model model, @ModelAttribute("user") PersonDto user) {
-        model.addAttribute("loggedAs", "Logged as " + user.getCpf());
-        model.addAttribute("patientLazy", new PersonDto());
-        return new ModelAndView("home");
+    @PostMapping("/add-patient")
+    public ModelAndView addPatient(Model model, @ModelAttribute String cpf) {
+        model.addAttribute("cpf", cpf);
+        return new ModelAndView("add-patient");
     }
 }

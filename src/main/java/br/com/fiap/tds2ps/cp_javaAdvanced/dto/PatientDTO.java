@@ -1,12 +1,9 @@
-package br.com.fiap.tds2ps.cp_javaAdvanced.domain;
+package br.com.fiap.tds2ps.cp_javaAdvanced.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import br.com.fiap.tds2ps.cp_javaAdvanced.domain.Patient;
 
-@Entity
-@Table(name = "cp_tb_patient")
-public class Patient extends Person {
-
+public class PatientDTO {
+    private String cpf;
     private String name;
     private String email;
     private String phone;
@@ -14,16 +11,34 @@ public class Patient extends Person {
     private String address;
     private String gender;
 
-    public Patient() {
+    public PatientDTO() {
     }
 
-    public Patient(String name, String email, String phone, String cep, String address, String gender) {
+    public PatientDTO(String cpf, String name, String email, String phone, String cep, String address, String gender) {
+        this.cpf = cpf;
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.cep = cep;
         this.address = address;
         this.gender = gender;
+    }
+
+    public PatientDTO(Patient patient) {
+        this.cpf = patient.getCpf();
+        this.name = patient.getName();
+        this.email = patient.getEmail();
+        this.phone = patient.getPhone();
+        this.cep = patient.getCep();
+        this.address = patient.getAddress();
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getName() {

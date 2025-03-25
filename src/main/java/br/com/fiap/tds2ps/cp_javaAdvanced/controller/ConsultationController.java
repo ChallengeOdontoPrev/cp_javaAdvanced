@@ -16,7 +16,7 @@ public class ConsultationController {
     @PostMapping("/start")
     public ModelAndView start(Model model, @ModelAttribute("patientLazy") PersonDto patient) {
         //Paciente já existe - no nosso vamos usar o cpf 12345678900 como ja existente
-        if(patient.getCpf().equals("12345678900")){
+        if (patient.getCpf().equals("12345678900")) {
             return new ModelAndView("add-consultation");
         }
         return new ModelAndView("add-patient");

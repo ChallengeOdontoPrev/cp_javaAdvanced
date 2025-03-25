@@ -22,7 +22,7 @@ public class DoctorController {
     @PostMapping
     public ModelAndView insert(@ModelAttribute DoctorDTO doctorDTO, Model model) {
         doctorService.insert(doctorDTO);
-        model.addAttribute("loggedAs", "Logged as " + doctorDTO.getCpf());
+        model.addAttribute("loggedAs", doctorDTO.getCpf());
         return new ModelAndView("home");
     }
 

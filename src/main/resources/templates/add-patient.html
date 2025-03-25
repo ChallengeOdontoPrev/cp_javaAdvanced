@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-bs-theme="auto">
+<html lang="en" data-bs-theme="auto" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <script src="/assets/js/color-modes.js"></script>
 
@@ -181,77 +181,81 @@
         <div class="row g-5">
             <div class="col-md-12">
                 <h4 class="mb-3">Dados Pessoais</h4>
-                <form class="needs-validation" novalidate action="/patient/save" method="post">
+                <form action="#" class="needs-validation" th:action="@{/patient}" method="post">
+
+                    <!-- Campo Nome -->
                     <div class="col-sm-12">
-                        <label for="fullName" class="form-label">Full name</label>
-                        <input type="text" class="form-control" id="fullName" placeholder="" value="" required>
+                        <label for="name" class="form-label">Full name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
                         <div class="invalid-feedback">
                             Valid full name is required.
                         </div>
-                        <div class="col-sm-12">
-                            <label for="cpf" class="form-label">CPF</label>
-                            <input type="text" class="form-control" id="cpf" placeholder="" value="" required>
-                            <div class="invalid-feedback">
-                                Valid CPF is required.
-                            </div>
-                        </div>
-
-                        <div class="row g-3">
-                            <div class="col-6">
-                                <label for="email" class="form-label">Email <span
-                                        class="text-body-secondary">(Optional)</span></label>
-                                <input type="email" class="form-control" id="email" placeholder="you@example.com">
-                                <div class="invalid-feedback">
-                                    Please enter a valid email address updates.
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <label for="phone" class="form-label">Phone <span
-                                        class="text-body-secondary"></span></label>
-                                <input type="number" class="form-control" id="phone" placeholder="(DDD)1111-111">
-                                <div class="invalid-feedback">
-                                    Please enter a valid phone number.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row g-3">
-                            <div class="col-6">
-                                <label for="cep" class="form-label">CEP <span
-                                        class="text-body-secondary">(Optional)</span></label>
-                                <input type="number" class="form-control" id="cep" placeholder="41770235">
-                                <div class="invalid-feedback">
-                                    Please enter a valid CEP (only numbers).
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <label for="complement" class="form-label">Address complement <span
-                                        class="text-body-secondary"></span></label>
-                                <input type="text" class="form-control" id="complement"
-                                       placeholder="Number and complement">
-                                <div class="invalid-feedback">
-                                    Please enter a valid number and address complement.
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="col-sm-12">
-                            <label for="gender" class="form-label">Gender (Self-declaration) <span
-                                    class="text-body-secondary"></span></label>
-                            <input type="text" class="form-control" id="gender" placeholder="Não binário">
-                            <div class="invalid-feedback">
-                                Please enter the patient's gender self declaration
-                            </div>
-                        </div>
-
-                        <hr class="my-4">
                     </div>
 
+                    <!-- Campo CPF -->
+                    <div class="col-sm-12">
+                        <label for="cpf" class="form-label">CPF</label>
+                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="" required>
+                        <div class="invalid-feedback">
+                            Valid CPF is required.
+                        </div>
+                    </div>
+
+                    <!-- Campos Email e Telefone -->
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <label for="email" class="form-label">Email <span class="text-body-secondary">(Optional)</span></label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="number" class="form-control" id="phone" name="phone" placeholder="(DDD)1111-1111">
+                            <div class="invalid-feedback">
+                                Please enter a valid phone number.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Campos CEP e Complemento de Endereço -->
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <label for="cep" class="form-label">CEP <span class="text-body-secondary">(Optional)</span></label>
+                            <input type="text" class="form-control" id="cep" name="cep" placeholder="41770235">
+                            <div class="invalid-feedback">
+                                Please enter a valid CEP (only numbers).
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <label for="address" class="form-label">Address complement <span class="text-body-secondary">(Optional)</span></label>
+                            <input type="text" class="form-control" id="address" name="address" placeholder="Number and complement">
+                            <div class="invalid-feedback">
+                                Please enter a valid number and address complement.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Campo Gênero -->
+                    <div class="col-sm-12">
+                        <label for="gender" class="form-label">Gender (Self-declaration)</label>
+                        <input type="text" class="form-control" id="gender" name="gender" placeholder="Não binário">
+                        <div class="invalid-feedback">
+                            Please enter the patient's gender self-declaration.
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <!-- Botão de Salvar -->
                     <button class="w-100 btn btn-primary btn-lg" type="submit">Save</button>
                 </form>
+            </div>
+        </div>
     </main>
-
 
     <footer class="my-5 pt-5 text-body-secondary text-center text-small">
         <p class="mb-1">&copy; 2017–2024 Company Name</p>
@@ -262,8 +266,9 @@
         </ul>
     </footer>
 </div>
-<script src="/assets/dist/js/bootstrap.bundle.min.js"></script>
 
+<script src="/assets/dist/js/bootstrap.bundle.min.js"></script>
 <script src="/assets/dist/js/add-patient.js"></script>
 </body>
 </html>
+

@@ -12,7 +12,7 @@ public class DoctorDTO {
         this.cpf = cpf;
     }
 
-    public DoctorDTO(Doctor doctor){
+    public DoctorDTO(Doctor doctor) {
         this.cpf = doctor.getCpf();
     }
 
