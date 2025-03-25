@@ -1,6 +1,6 @@
 package br.com.fiap.tds2ps.cp_javaAdvanced.dto;
 
-public class PersonDto {
+public class PersonDTO {
 
     private String cpf;
 

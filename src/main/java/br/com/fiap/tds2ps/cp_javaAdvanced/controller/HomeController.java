@@ -1,6 +1,6 @@
 package br.com.fiap.tds2ps.cp_javaAdvanced.controller;
 
-import br.com.fiap.tds2ps.cp_javaAdvanced.dto.PersonDto;
+import br.com.fiap.tds2ps.cp_javaAdvanced.dto.PersonDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +13,7 @@ public class HomeController {
 
     @GetMapping("/")
     public ModelAndView index(Model model) {
-        model.addAttribute("user", new PersonDto());
+        model.addAttribute("user", new PersonDTO());
         return new ModelAndView("index");
     }
 
