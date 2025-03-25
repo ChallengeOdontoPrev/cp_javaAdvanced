@@ -1,8 +1,8 @@
-package br.com.fiap.tds2ps.spring_mvc.service;
+package br.com.fiap.tds2ps.cp_javaAdvanced.service;
 
-import br.com.fiap.tds2ps.spring_mvc.domain.Doctor;
-import br.com.fiap.tds2ps.spring_mvc.dto.DoctorDTO;
-import br.com.fiap.tds2ps.spring_mvc.repositories.DoctorRepository;
+import br.com.fiap.tds2ps.cp_javaAdvanced.domain.Doctor;
+import br.com.fiap.tds2ps.cp_javaAdvanced.dto.DoctorDTO;
+import br.com.fiap.tds2ps.cp_javaAdvanced.repositories.DoctorRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

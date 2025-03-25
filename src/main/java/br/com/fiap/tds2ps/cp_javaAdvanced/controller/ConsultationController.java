@@ -1,6 +1,6 @@
-package br.com.fiap.tds2ps.spring_mvc.controller;
+package br.com.fiap.tds2ps.cp_javaAdvanced.controller;
 
-import br.com.fiap.tds2ps.spring_mvc.dto.PersonDto;
+import br.com.fiap.tds2ps.cp_javaAdvanced.dto.PersonDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;

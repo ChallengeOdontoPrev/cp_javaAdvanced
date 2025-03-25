@@ -1,4 +1,4 @@
-package br.com.fiap.tds2ps.spring_mvc;
+package br.com.fiap.tds2ps.cp_javaAdvanced;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

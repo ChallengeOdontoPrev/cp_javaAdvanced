@@ -1,4 +1,4 @@
-package br.com.fiap.tds2ps.spring_mvc.dto;
+package br.com.fiap.tds2ps.cp_javaAdvanced.dto;
 
 public class PersonDto {
 

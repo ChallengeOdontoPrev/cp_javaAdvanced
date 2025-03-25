@@ -1,4 +1,4 @@
-package br.com.fiap.tds2ps.spring_mvc.controller;
+package br.com.fiap.tds2ps.cp_javaAdvanced.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;

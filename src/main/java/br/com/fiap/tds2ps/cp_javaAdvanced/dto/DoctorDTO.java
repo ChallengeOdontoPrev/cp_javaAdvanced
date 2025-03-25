@@ -1,6 +1,6 @@
-package br.com.fiap.tds2ps.spring_mvc.dto;
+package br.com.fiap.tds2ps.cp_javaAdvanced.dto;
 
-import br.com.fiap.tds2ps.spring_mvc.domain.Doctor;
+import br.com.fiap.tds2ps.cp_javaAdvanced.domain.Doctor;
 
 public class DoctorDTO {
     private String cpf;

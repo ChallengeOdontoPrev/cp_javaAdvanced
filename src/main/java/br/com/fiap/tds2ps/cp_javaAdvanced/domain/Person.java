@@ -1,4 +1,4 @@
-package br.com.fiap.tds2ps.spring_mvc.domain;
+package br.com.fiap.tds2ps.cp_javaAdvanced.domain;
 
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
